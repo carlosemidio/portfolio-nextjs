@@ -16,6 +16,7 @@ const useStyles = makeStyles(() =>
         height: "100%",
         width: "100%",
         margin: 0,
+        backgroundColor: "#708090",
       },
       "#root": {
         height: "100%",

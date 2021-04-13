@@ -8,8 +8,6 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
-      height: "100vh",
-      backgroundColor: "#000000",
     },
     navbar: {
       listStyle: "none",
@@ -20,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: 80,
       paddingBottom: 80,
       "& > li": {
-        marginLeft: 20,
+        marginLeft: 40,
         "& > a": {
           color: "#ffffff",
           fontSize: 24,
@@ -76,6 +74,14 @@ const useStyles = makeStyles((theme: Theme) =>
         transform: "translateX(0%)",
       },
     },
+    about: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      marginTop: 1000,
+      color: "#ffffff",
+      fontSize: 18,
+    },
   })
 );
 
@@ -92,17 +98,15 @@ function Home() {
         <Layout />
         <ul className={classes.navbar}>
           <li>
-            <a href="#" data-id="about">
-              QUEM SOU
-            </a>
+            <a href="#about">QUEM SOU</a>
           </li>
           <li>
-            <a href="#" data-id="whatido">
+            <a href="#" id="whatido">
               O QUE FAÇO
             </a>
           </li>
           <li>
-            <a href="#" data-id="home">
+            <a href="#" id="home">
               <img
                 src="/perfil.jpeg"
                 alt="Imagem de perfil"
@@ -111,12 +115,12 @@ function Home() {
             </a>
           </li>
           <li>
-            <a href="#" data-id="portfolio">
+            <a href="#" id="portfolio">
               PORTFÓLIO
             </a>
           </li>
           <li>
-            <a href="#" data-id="contact">
+            <a href="#" id="contact">
               FALE COMIGO
             </a>
           </li>
@@ -130,6 +134,15 @@ function Home() {
           <div className={classes.textFromRight}>
             Soluções sob medida para a sua empresa
           </div>
+        </div>
+        <div className={classes.about} id="about">
+          Sou o Carlos, desenvolvedor web com mais de 3 anos de experiência.
+          <br /> Possou certificação em desenvolvimento frontend. <br />
+          Trabalho com as liguagens node e php no backend e tenho bastante
+          experiência com devops. <br /> Atualmente atuo como freelancer
+          fullstack/devops. <br /> Nesse contexto consigo desenvolver uma
+          aplicação desde o levantamento de requisitos ao deploy (publicar na
+          web).
         </div>
       </main>
     </div>
