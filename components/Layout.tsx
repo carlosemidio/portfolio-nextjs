@@ -15,22 +15,17 @@ import MailIcon from "@material-ui/icons/Mail";
 const useStyles = makeStyles({
   list: {
     width: 250,
+    backgroundColor: "#708090",
+    height: "100%",
+    color: "#ffffff",
   },
   menu: {
     zIndex: 99,
     color: "#ffffff",
-    position: "relative",
-    "&::after": {
-      content: '""',
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      top: 0,
-      left: 0,
-      backgroundColor: "#000000",
-      opacity: 0.6,
-      zIndex: -1,
-    },
+    backgroundColor: "rgba(0, 0, 0, .6)",
+    position: "absolute",
+    top: 15,
+    left: 15,
   },
 });
 
@@ -41,7 +36,7 @@ const menus = [
   },
   {
     name: "Quem sou",
-    link: "#",
+    link: "#about",
   },
   {
     name: "Oque faço",
@@ -85,12 +80,14 @@ export default function SwipeableTemporaryDrawer() {
     >
       <List>
         {menus.map((menu, index) => (
-          <ListItem button key={menu.name}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={menu.name} />
-          </ListItem>
+          <a href={menu.link}>
+            <ListItem button key={menu.name}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={menu.name} />
+            </ListItem>
+          </a>
         ))}
       </List>
     </div>

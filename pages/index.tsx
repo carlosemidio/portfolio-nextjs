@@ -34,29 +34,43 @@ const useStyles = makeStyles((theme: Theme) =>
       height: 200,
       borderRadius: "50%",
     },
+    profileMobile: {
+      paddingTop: 20,
+      display: "none",
+      [theme.breakpoints.down("xs")]: {
+        display: "flex",
+        justifyContent: "center",
+      },
+    },
     backgroundBox: {
       position: "relative",
       width: "100%",
-      height: 28,
+      height: "auto",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
     },
     textFromLeft: {
-      fontSize: 28,
+      fontSize: 60,
       color: "#ffffff",
       animationName: "$fadeLeft",
       animationDuration: "3s",
       left: 0,
       padding: 15,
+      [theme.breakpoints.down("xs")]: {
+        fontSize: 28,
+      },
     },
     textFromRight: {
-      fontSize: 28,
+      fontSize: 60,
       color: "#ffffff",
       animationName: "$fadeRight",
       animationDuration: "3s",
       left: 0,
       padding: 15,
+      [theme.breakpoints.down("xs")]: {
+        fontSize: 28,
+      },
     },
     "@keyframes fadeLeft": {
       "0%": {
@@ -75,12 +89,12 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     about: {
-      width: "100%",
       display: "flex",
       justifyContent: "center",
-      marginTop: 1000,
+      marginTop: 600,
       color: "#ffffff",
       fontSize: 18,
+      padding: 15,
     },
   })
 );
@@ -125,6 +139,13 @@ function Home() {
             </a>
           </li>
         </ul>
+        <div className={classes.profileMobile}>
+          <img
+            src="/perfil.jpeg"
+            alt="Imagem de perfil"
+            className={classes.profileImage}
+          />
+        </div>
         <div className={classes.backgroundBox}>
           <div className={classes.textFromLeft}>
             Desenvolvimento de sites e sistemas web
