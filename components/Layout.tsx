@@ -19,6 +19,10 @@ const useStyles = makeStyles({
     height: "100%",
     color: "#ffffff",
   },
+  menuLink: {
+    color: "#ffffff",
+    textDecoration: "none",
+  },
   menu: {
     zIndex: 99,
     color: "#ffffff",
@@ -40,7 +44,7 @@ const menus = [
   },
   {
     name: "Oque faço",
-    link: "#",
+    link: "#whatido",
   },
   {
     name: "Portifólio",
@@ -80,7 +84,11 @@ export default function SwipeableTemporaryDrawer() {
     >
       <List>
         {menus.map((menu, index) => (
-          <a href={menu.link}>
+          <a
+            href={menu.link}
+            key={"menu-" + menu.name}
+            className={classes.menuLink}
+          >
             <ListItem button key={menu.name}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}

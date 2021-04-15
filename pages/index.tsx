@@ -8,6 +8,22 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
+      backgroundImage: "url('/background.png')",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      position: "relative",
+      zIndex: 0,
+      "&::after": {
+        content: '""',
+        opacity: ".7",
+        zIndex: -1,
+        backgroundColor: "#000000",
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        top: 0,
+        left: 0,
+      },
     },
     navbar: {
       listStyle: "none",
@@ -49,6 +65,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      overflow: "hidden",
     },
     textFromLeft: {
       fontSize: 60,
@@ -88,19 +105,44 @@ const useStyles = makeStyles((theme: Theme) =>
         transform: "translateX(0%)",
       },
     },
-    about: {
+    sectionTitle: {
+      paddingTop: 300,
+      width: "100%",
+      fontSize: 100,
+      textAlign: "center",
+      color: "#ffffff",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: 60,
+      },
+    },
+    aboutBox: {
       display: "flex",
       justifyContent: "center",
-      marginTop: 600,
-      color: "#ffffff",
-      fontSize: 18,
       padding: 15,
+      width: "100%",
+    },
+    aboutTtext: {
+      color: "#ffffff",
+      fontSize: 24,
+      maxWidth: 600,
     },
   })
 );
 
 function Home() {
   const classes = useStyles();
+
+  if (typeof window === "object") {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+  }
 
   return (
     <div>
@@ -115,18 +157,14 @@ function Home() {
             <a href="#about">QUEM SOU</a>
           </li>
           <li>
-            <a href="#" id="whatido">
-              O QUE FAÇO
-            </a>
+            <a href="#whatido">O QUE FAÇO</a>
           </li>
           <li>
-            <a href="#" id="home">
-              <img
-                src="/perfil.jpeg"
-                alt="Imagem de perfil"
-                className={classes.profileImage}
-              />
-            </a>
+            <img
+              src="/perfil.jpeg"
+              alt="Imagem de perfil"
+              className={classes.profileImage}
+            />
           </li>
           <li>
             <a href="#" id="portfolio">
@@ -156,14 +194,29 @@ function Home() {
             Soluções sob medida para a sua empresa
           </div>
         </div>
-        <div className={classes.about} id="about">
-          Sou o Carlos, desenvolvedor web com mais de 3 anos de experiência.
-          <br /> Possou certificação em desenvolvimento frontend. <br />
-          Trabalho com as liguagens node e php no backend e tenho bastante
-          experiência com devops. <br /> Atualmente atuo como freelancer
-          fullstack/devops. <br /> Nesse contexto consigo desenvolver uma
-          aplicação desde o levantamento de requisitos ao deploy (publicar na
-          web).
+        <p className={classes.sectionTitle} id="about">
+          Sobre mim
+        </p>
+        <div className={classes.aboutBox}>
+          <p className={classes.aboutTtext}>
+            Me chamo Carlos e sou desenvolvedor web com mais de 3 anos de
+            experiência. Já são mais de três anos desenvolvendo soluções e
+            criando bons laços de parceiria com clietes e colegas da área. Para
+            mim cada projeto é mais uma chance de melhorar a vida das pessoas:
+            ajudando a atrair mais clientes, automatizando processos, etc...
+          </p>
+        </div>
+        <p className={classes.sectionTitle} id="whatido">
+          Oque faço
+        </p>
+        <div className={classes.aboutBox}>
+          <p className={classes.aboutTtext}>
+            Me chamo Carlos e sou desenvolvedor web com mais de 3 anos de
+            experiência. Já são mais de três anos desenvolvendo soluções e
+            criando bons laços de parceiria com clietes e colegas da área. Para
+            mim cada projeto é mais uma chance de melhorar a vida das pessoas:
+            ajudando a atrair mais clientes, automatizando processos, etc...
+          </p>
         </div>
       </main>
     </div>
