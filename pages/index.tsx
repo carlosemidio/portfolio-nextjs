@@ -4,6 +4,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import Carousel from "../components/Carousel";
+import ContactForm from "../components/ContactForm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -109,7 +110,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     sectionTitle: {
-      paddingTop: 300,
+      paddingTop: 100,
       width: "100%",
       fontSize: 100,
       textAlign: "center",
@@ -165,7 +166,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 24,
       maxWidth: "100%",
     },
-    portfolio: {},
   })
 );
 
@@ -277,13 +277,7 @@ function Home() {
           Contato
         </p>
         <div className={classes.aboutBox}>
-          <p className={classes.aboutText}>
-            Me chamo Carlos e sou desenvolvedor web com mais de 3 anos de
-            experiência. Já são mais de três anos desenvolvendo soluções e
-            criando bons laços de parceiria com clietes e colegas da área. Para
-            mim cada projeto é mais uma chance de melhorar a vida das pessoas:
-            ajudando a atrair mais clientes, automatizando processos, etc...
-          </p>
+          <ContactForm />
         </div>
       </main>
     </div>

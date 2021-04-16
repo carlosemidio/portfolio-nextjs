@@ -52,7 +52,7 @@ function MediaCard(props) {
             Share
           </Button> */}
           <Button size="small" color="primary">
-            Learn More
+            Ver detalhes
           </Button>
         </CardActions>
       </Card>
