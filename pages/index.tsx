@@ -211,7 +211,7 @@ function Home() {
 
         {/* Open Graph */}
         <meta property="OG TAG" content="VALOR" />
-        <meta property="og:title" content="José Carlos Emídio Pereira" />
+        <meta property="og:title" content="Carlos Emídio" />
         <meta property="og:image" content="/perfil.jpeg" />
         <meta property="og:image:type" content="image/*" />
         <meta
