@@ -3,14 +3,17 @@ import Layout from "../components/Layout";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import createStyles from "@material-ui/core/styles/createStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import Carousel from "../components/Carousel";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
       backgroundImage: "url('/background.png')",
-      backgroundSize: "cover",
+      backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
+      backgroundPosition: "center top",
+      backgroundAttachment: "fixed",
       position: "relative",
       zIndex: 0,
       "&::after": {
@@ -121,11 +124,48 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 15,
       width: "100%",
     },
-    aboutTtext: {
+    aboutText: {
       color: "#ffffff",
       fontSize: 24,
       maxWidth: 600,
     },
+    services: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 15,
+      width: "100%",
+    },
+    servicesBox: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: 15,
+      maxWidth: 1240,
+      [theme.breakpoints.down("xs")]: {
+        flexDirection: "column",
+        padding: 0,
+      },
+    },
+    serviceCard: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      padding: 15,
+      width: "100%",
+      [theme.breakpoints.down("xs")]: {
+        padding: 0,
+      },
+    },
+    serviceTitle: {
+      color: "#ffffff",
+    },
+    serviceText: {
+      color: "#ffffff",
+      fontSize: 24,
+      maxWidth: "100%",
+    },
+    portfolio: {},
   })
 );
 
@@ -167,14 +207,10 @@ function Home() {
             />
           </li>
           <li>
-            <a href="#" id="portfolio">
-              PORTFÓLIO
-            </a>
+            <a href="#portfolio">PORTFÓLIO</a>
           </li>
           <li>
-            <a href="#" id="contact">
-              FALE COMIGO
-            </a>
+            <a href="#contact">FALE COMIGO</a>
           </li>
         </ul>
         <div className={classes.profileMobile}>
@@ -186,31 +222,62 @@ function Home() {
         </div>
         <div className={classes.backgroundBox}>
           <div className={classes.textFromLeft}>
-            Desenvolvimento de sites e sistemas web
+            Desenvolvimento soluções inteligentes
           </div>
         </div>
         <div className={classes.backgroundBox}>
           <div className={classes.textFromRight}>
-            Soluções sob medida para a sua empresa
+            Sob medida para a sua empresa
           </div>
         </div>
         <p className={classes.sectionTitle} id="about">
           Sobre mim
         </p>
         <div className={classes.aboutBox}>
-          <p className={classes.aboutTtext}>
-            Me chamo Carlos e sou desenvolvedor web com mais de 3 anos de
-            experiência. Já são mais de três anos desenvolvendo soluções e
-            criando bons laços de parceiria com clietes e colegas da área. Para
-            mim cada projeto é mais uma chance de melhorar a vida das pessoas:
-            ajudando a atrair mais clientes, automatizando processos, etc...
+          <p className={classes.aboutText}>
+            Me chamo Carlos, sou desenvolvedor web com mais de 3 anos de
+            experiência, projetando soluções e criando bons laços de parceiria
+            com clietes e colegas da área. Para mim cada projeto é mais uma
+            chance de melhorar a vida das pessoas: ajudando a atrair mais
+            clientes, automatizando processos, etc...
           </p>
         </div>
         <p className={classes.sectionTitle} id="whatido">
           Oque faço
         </p>
+        <div className={classes.services}>
+          <div className={classes.servicesBox}>
+            <div className={classes.serviceCard}>
+              <img
+                src="/icon-sistem.png"
+                alt="Imagem web"
+                style={{ width: 100, height: "auto" }}
+              />
+              <h1 className={classes.serviceTitle}>
+                Desenvolvimento de websites e Sistemas web
+              </h1>
+              <p className={classes.serviceText}>
+                Sites institucionais, blogs, portais de notícias, ecomerces,
+                dashboards, sistemas de gestão, etc...
+              </p>
+            </div>
+          </div>
+        </div>
+        <p className={classes.sectionTitle} id="portfolio">
+          Portfólio
+        </p>
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div style={{ maxWidth: 1240, width: "100%", height: 600 }}>
+            <Carousel />
+          </div>
+        </div>
+        <p className={classes.sectionTitle} id="contact">
+          Contato
+        </p>
         <div className={classes.aboutBox}>
-          <p className={classes.aboutTtext}>
+          <p className={classes.aboutText}>
             Me chamo Carlos e sou desenvolvedor web com mais de 3 anos de
             experiência. Já são mais de três anos desenvolvendo soluções e
             criando bons laços de parceiria com clietes e colegas da área. Para

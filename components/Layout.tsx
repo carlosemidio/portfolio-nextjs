@@ -26,7 +26,6 @@ const useStyles = makeStyles({
   menu: {
     zIndex: 99,
     color: "#ffffff",
-    backgroundColor: "rgba(0, 0, 0, .6)",
     position: "absolute",
     top: 15,
     left: 15,
@@ -48,11 +47,11 @@ const menus = [
   },
   {
     name: "Portifólio",
-    link: "#",
+    link: "#portfolio",
   },
   {
     name: "Fale Comigo",
-    link: "#",
+    link: "#contact",
   },
 ];
 
