@@ -189,6 +189,40 @@ function Home() {
       <Head>
         <title>Home</title>
       </Head>
+      <Head>
+        <title key="title">Carlos Emídio</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="Desenvolvedor web freelancer" />
+        <meta
+          name="keywords"
+          key="keywords"
+          content="carlos,emidio,emídio,freelancer,web,php,node,react,reactjs,laravel,sistema,sistemas"
+        />
+        <meta name="author" content="José Carlos Emídio Pereira" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta
+          name="twitter:creator"
+          content="José Carlos Emídio Pereira"
+          key="twhandle"
+        />
+
+        {/* Open Graph */}
+        <meta property="OG TAG" content="VALOR" />
+        <meta property="og:title" content="José Carlos Emídio Pereira" />
+        <meta property="og:image" content="/perfil.jpeg" />
+        <meta property="og:image:type" content="image/*" />
+        <meta
+          property="og:description"
+          content="Desenvolvedor web freelancer"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.carlosemidio.com.br/" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Carlos Emídio" />
+      </Head>
 
       <main className={classes.root} id="home">
         <Layout />
