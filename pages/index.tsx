@@ -199,15 +199,11 @@ function Home() {
           key="keywords"
           content="carlos,emidio,emídio,freelancer,web,php,node,react,reactjs,laravel,sistema,sistemas"
         />
-        <meta name="author" content="José Carlos Emídio Pereira" />
+        <meta name="author" content="Carlos Emídio" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary" key="twcard" />
-        <meta
-          name="twitter:creator"
-          content="José Carlos Emídio Pereira"
-          key="twhandle"
-        />
+        <meta name="twitter:creator" content="Carlos Emídio" key="twhandle" />
 
         {/* Open Graph */}
         <meta property="OG TAG" content="VALOR" />
