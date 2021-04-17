@@ -91,7 +91,8 @@ class Index extends Component<Props> {
           */
           responsive={responsive}
           ssr
-          infinite={false}
+          infinite={true}
+          autoPlay={true}
           beforeChange={() => this.setState({ isMoving: true })}
           afterChange={() => this.setState({ isMoving: false })}
           containerClass="first-carousel-container container"

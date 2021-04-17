@@ -17,6 +17,13 @@ const useStyles = makeStyles((theme: Theme) =>
     card: {
       margin: "0 20px",
     },
+    cardLink: {
+      textDecoration: "none",
+      color: "inherit",
+    },
+    cardLinkLess: {
+      cursor: "default",
+    },
     media: {
       height: 240,
     },
@@ -28,17 +35,35 @@ function MediaCard(props) {
   const { image, link, headline, description, isMoving } = props;
 
   return (
-    <a
-      onClick={(e) => {
-        if (isMoving) {
-          e.preventDefault();
-        }
-      }}
-      href={link}
-      target="_blank"
-    >
-      <Card className={classes.card}>
-        <CardActionArea>
+    <Card className={classes.card}>
+      {link ? (
+        <a
+          className={classes.cardLink}
+          onClick={(e) => {
+            if (isMoving) {
+              e.preventDefault();
+            }
+          }}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CardActionArea style={{ cursor: link && "pointer" }}>
+            <CardMedia
+              className={classes.media}
+              image={image}
+              title={headline}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {headline}
+              </Typography>
+              <Typography component="p">{description}</Typography>
+            </CardContent>
+          </CardActionArea>
+        </a>
+      ) : (
+        <>
           <CardMedia className={classes.media} image={image} title={headline} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -46,17 +71,14 @@ function MediaCard(props) {
             </Typography>
             <Typography component="p">{description}</Typography>
           </CardContent>
-        </CardActionArea>
-        <CardActions>
-          {/* <Button size="small" color="primary">
-            Share
-          </Button> */}
-          <Button size="small" color="primary">
-            Ver detalhes
-          </Button>
-        </CardActions>
-      </Card>
-    </a>
+        </>
+      )}
+      <CardActions>
+        <Button size="small" color="primary">
+          Ver detalhes
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
 export default MediaCard;

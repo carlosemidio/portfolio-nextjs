@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -11,6 +11,8 @@ import createStyles from "@material-ui/core/styles/createStyles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import { withFormik, FormikProps } from "formik";
 import * as yup from "yup";
+import InputMask from "react-input-mask";
+import { trim, size } from "lodash";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -40,9 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
     },
-    textField: {
-      color: "#ffffff!important",
-    },
   })
 );
 
@@ -52,10 +51,7 @@ const validationsForm = {
     .string()
     .email("Informe um email válido")
     .required("O email é obrigatório"),
-  phone: yup
-    .string()
-    .min(10, "O telefone precisa ter pelo menos 10 caracteres")
-    .max(11, "O telefone precisa ter no máximo 11 caracteres"),
+  phone: yup.string(),
   subject: yup.string().required("O assunto é obrigatório"),
   message: yup.string().required("A mensagem é obrigatória"),
 };
@@ -82,6 +78,7 @@ const form = (props: FormikProps<FormValues>) => {
   } = props;
 
   const classes = useStyles();
+  const [mask, setMask] = useState("(99) 99999-9999");
 
   return (
     <div className={classes.container}>
@@ -89,9 +86,6 @@ const form = (props: FormikProps<FormValues>) => {
         <Card className={classes.card}>
           <CardContent>
             <TextField
-              InputProps={{
-                className: classes.textField,
-              }}
               id="name"
               label="Nome"
               value={values.name}
@@ -116,23 +110,38 @@ const form = (props: FormikProps<FormValues>) => {
               variant="outlined"
               fullWidth
             />
-            <TextField
-              id="phone"
-              label="Telefone"
-              type="text"
-              inputProps={{
-                minLength: 10,
-                maxLength: 11,
+            <InputMask
+              mask={mask}
+              onBlur={(e) => {
+                if (size(trim(e.target.value, "_")) === 14) {
+                  setMask("(99) 9999-9999");
+                }
+              }}
+              onFocus={(e) => {
+                if (size(trim(e.target.value, "_")) === 14) {
+                  setMask("(99) 99999-9999");
+                }
               }}
               value={values.phone}
               onChange={handleChange}
-              onBlur={handleBlur}
-              helperText={touched.phone ? errors.phone : ""}
-              error={touched.phone && Boolean(errors.phone)}
-              margin="dense"
-              variant="outlined"
-              fullWidth
-            />
+              disabled={false}
+              maskChar={null}
+            >
+              {() => (
+                <TextField
+                  id="phone"
+                  name="phone"
+                  label="Telefone"
+                  value={values.phone}
+                  helperText={touched.phone ? errors.phone : ""}
+                  error={touched.phone && Boolean(errors.phone)}
+                  type="text"
+                  margin="dense"
+                  variant="outlined"
+                  fullWidth
+                />
+              )}
+            </InputMask>
             <TextField
               id="subject"
               label="Assunto"
@@ -198,19 +207,7 @@ const Form = withFormik<MyFormProps, FormValues>({
   handleSubmit: (values, { setSubmitting, resetForm }) => {
     setTimeout(() => {
       // submit to the server
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      };
-
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/doador`, requestOptions)
-        .then((response) => response.json())
-        .then((data) => {
-          setSubmitting(false);
-          resetForm();
-          alert(data.message);
-        });
+      console.log(JSON.stringify(values));
     }, 1000);
   },
 })(form);

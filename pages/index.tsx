@@ -252,12 +252,12 @@ function Home() {
         </div>
         <div className={classes.backgroundBox}>
           <div className={classes.textFromLeft}>
-            Desenvolvimento soluções inteligentes
+            Desenvolvendo soluções inteligentes
           </div>
         </div>
         <div className={classes.backgroundBox}>
           <div className={classes.textFromRight}>
-            Sob medida para a sua empresa
+            Sob medida para o seu negócio
           </div>
         </div>
         <p className={classes.sectionTitle} id="about">
