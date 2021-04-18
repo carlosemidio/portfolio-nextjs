@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
         "& > a": {
           color: "#ffffff",
           fontSize: 24,
+          fontFamily: "Montserrat-Regular",
           textDecoration: "none",
         },
       },
@@ -73,6 +74,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textFromLeft: {
       fontSize: 60,
+      fontFamily: "Montserrat-Regular",
       color: "#ffffff",
       animationName: "$fadeLeft",
       animationDuration: "3s",
@@ -84,6 +86,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textFromRight: {
       fontSize: 60,
+      fontFamily: "Montserrat-Regular",
       color: "#ffffff",
       animationName: "$fadeRight",
       animationDuration: "3s",
@@ -113,6 +116,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: 100,
       width: "100%",
       fontSize: 100,
+      fontFamily: "Montserrat-Regular",
       textAlign: "center",
       color: "#ffffff",
       [theme.breakpoints.down("xs")]: {
@@ -128,6 +132,7 @@ const useStyles = makeStyles((theme: Theme) =>
     aboutText: {
       color: "#ffffff",
       fontSize: 24,
+      fontFamily: "Montserrat-Regular",
       maxWidth: 600,
     },
     services: {
@@ -160,10 +165,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     serviceTitle: {
       color: "#ffffff",
+      fontFamily: "Montserrat-Regular",
     },
     serviceText: {
       color: "#ffffff",
       fontSize: 24,
+      fontFamily: "Montserrat-Regular",
       maxWidth: "100%",
     },
   })
@@ -218,6 +225,24 @@ function Home() {
         <meta property="og:url" content="https://www.carlosemidio.com.br/" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:site_name" content="Carlos Emídio" />
+        <link
+          rel="preload"
+          href="/fonts/montserrat/Montserrat-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/montserrat/Montserrat-Regular.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/montserrat/Montserrat-Light.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
 
       <main className={classes.root} id="home">
@@ -267,7 +292,7 @@ function Home() {
           <p className={classes.aboutText}>
             Me chamo Carlos, sou desenvolvedor web com mais de 3 anos de
             experiência, projetando soluções e criando bons laços de parceiria
-            com clietes e colegas da área. Para mim cada projeto é mais uma
+            com clientes e colegas da área. Para mim cada projeto é mais uma
             chance de melhorar a vida das pessoas: ajudando a atrair mais
             clientes, automatizando processos, etc...
           </p>

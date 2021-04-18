@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme: Theme) =>
     media: {
       height: 240,
     },
+    text: {
+      fontFamily: "Montserrat-Regular",
+    },
   })
 );
 
@@ -55,10 +58,17 @@ function MediaCard(props) {
               title={headline}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h2"
+                className={classes.text}
+              >
                 {headline}
               </Typography>
-              <Typography component="p">{description}</Typography>
+              <Typography component="p" className={classes.text}>
+                {description}
+              </Typography>
             </CardContent>
           </CardActionArea>
         </a>
@@ -66,15 +76,22 @@ function MediaCard(props) {
         <>
           <CardMedia className={classes.media} image={image} title={headline} />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="h2"
+              className={classes.text}
+            >
               {headline}
             </Typography>
-            <Typography component="p">{description}</Typography>
+            <Typography component="p" className={classes.text}>
+              {description}
+            </Typography>
           </CardContent>
         </>
       )}
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" className={classes.text}>
           Ver detalhes
         </Button>
       </CardActions>
