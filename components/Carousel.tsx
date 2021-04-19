@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 import { withStyles, WithStyles } from "@material-ui/core/styles";
 import createStyles from "@material-ui/core/styles/createStyles";
@@ -6,7 +6,7 @@ import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
 import MobileDetect from "mobile-detect";
 
-import Card from "./card";
+import Card from "./Card";
 import Carousel from "react-multi-carousel";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -44,25 +44,52 @@ class Index extends Component<Props> {
     const { classes } = this.props;
     const projects = [
       {
-        image: "/cepac-barueri.png",
+        image: "/projects/cepac/card.jpeg",
+        images: [
+          "/projects/cepac/card.jpeg",
+          "/projects/cepac/card2.jpeg",
+          "/projects/cepac/card3.jpeg",
+          "/projects/cepac/card4.jpeg",
+          "/projects/cepac/card5.jpeg",
+        ],
         link: "https://www.cepacbarueri.org.br/",
         headline: "Site da ONG CEPAC Barueri",
         description:
           "Desenvolvido com o framework Laravel(php) no backend(api) e o frontend em React.js com o framework Next.js",
       },
       {
-        image: "/ofs-cepac-barueri.png",
+        image: "/projects/ofs/card.jpeg",
+        images: [
+          "/projects/ofs/card.jpeg",
+          "/projects/ofs/card2.jpeg",
+          "/projects/ofs/card3.jpeg",
+          "/projects/ofs/card4.jpeg",
+          "/projects/ofs/card5.jpeg",
+        ],
         headline: "Sistema de gestão da ONG CEPAC Barueri",
         description: "Desenvolvido com o framework Laravel(php)",
       },
       {
-        image: "/museu-camara-cascudo.png",
+        image: "/projects/mcc/card.jpeg",
+        images: [
+          "/projects/mcc/card.jpeg",
+          "/projects/mcc/card2.jpeg",
+          "/projects/mcc/card3.jpeg",
+          "/projects/mcc/card4.jpeg",
+          "/projects/mcc/card5.jpeg",
+        ],
         link: "https://mcc.ufrn.br/",
         headline: "Site do Museu Câmara Cascudo",
         description: "Desenvolvido com o framework Laravel(php)",
       },
       {
-        image: "/tuttortv.png",
+        image: "/projects/tuttortv/card.jpeg",
+        images: [
+          "/projects/tuttortv/card.jpeg",
+          "/projects/tuttortv/card.jpeg",
+          "/projects/tuttortv/card.jpeg",
+          "/projects/tuttortv/card.jpeg",
+        ],
         link: "https://www.tuttor.tv/",
         headline: "Tuttor tv",
         description:
@@ -118,7 +145,7 @@ class Index extends Component<Props> {
           responsive={responsive}
           ssr
           infinite={true}
-          autoPlay={true}
+          autoPlay={!this.state.openModal}
           beforeChange={() => this.setState({ isMoving: true })}
           afterChange={() => this.setState({ isMoving: false })}
           containerClass="first-carousel-container container"
@@ -156,6 +183,7 @@ const styles = (theme: Theme) =>
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      zIndex: 1000 + "!important",
     },
   });
 

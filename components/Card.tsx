@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     card: {
       margin: "0 20px",
+      height: 400,
     },
     cardLink: {
       textDecoration: "none",
@@ -71,9 +72,6 @@ function MediaCard(props) {
               >
                 {headline}
               </Typography>
-              <Typography component="p" className={classes.text}>
-                {description}
-              </Typography>
             </CardContent>
           </CardActionArea>
         </a>
@@ -88,9 +86,6 @@ function MediaCard(props) {
               className={classes.text}
             >
               {headline}
-            </Typography>
-            <Typography component="p" className={classes.text}>
-              {description}
             </Typography>
           </CardContent>
         </>
