@@ -30,12 +30,17 @@ const useStyles = makeStyles((theme: Theme) =>
     text: {
       fontFamily: "Montserrat-Regular",
     },
+    content: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
   })
 );
 
 function MediaCard(props) {
   const classes = useStyles();
-  const { image, link, headline, description, isMoving } = props;
+  const { image, link, headline, description, isMoving, openModal } = props;
 
   return (
     <Card className={classes.card}>
@@ -90,8 +95,13 @@ function MediaCard(props) {
           </CardContent>
         </>
       )}
-      <CardActions>
-        <Button size="small" color="primary" className={classes.text}>
+      <CardActions className={classes.content}>
+        <Button
+          onClick={openModal}
+          size="small"
+          color="primary"
+          className={classes.text}
+        >
           Ver detalhes
         </Button>
       </CardActions>
