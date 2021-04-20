@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import Carousel from "react-multi-carousel";
-import Lightbox from "react-image-lightbox";
-import { withStyles, WithStyles } from "@material-ui/core/styles";
-import createStyles from "@material-ui/core/styles/createStyles";
-import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import React, { Component } from 'react';
+import Carousel from 'react-multi-carousel';
+import Lightbox from 'react-image-lightbox';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
+import createStyles from '@material-ui/core/styles/createStyles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
 
 const styles = (theme: Theme) =>
   createStyles({
     image: {
-      width: "100%",
+      width: '100%',
     },
     gallery: {
       zIndex: 9999,

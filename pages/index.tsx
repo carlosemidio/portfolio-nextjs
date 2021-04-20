@@ -1,178 +1,178 @@
-import { useState } from "react";
-import Head from "next/head";
-import Layout from "../components/Layout";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import createStyles from "@material-ui/core/styles/createStyles";
-import { Theme } from "@material-ui/core/styles/createMuiTheme";
-import Carousel from "../components/Carousel";
-import ContactForm from "../components/ContactForm";
+import { useState } from 'react';
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import createStyles from '@material-ui/core/styles/createStyles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import Carousel from '../components/Carousel';
+import ContactForm from '../components/ContactForm';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: "100%",
+      width: '100%',
       backgroundImage: "url('/background.png')",
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center top",
-      backgroundAttachment: "fixed",
-      position: "relative",
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center top',
+      backgroundAttachment: 'fixed',
+      position: 'relative',
       zIndex: 0,
-      "&::after": {
+      '&::after': {
         content: '""',
-        opacity: ".7",
+        opacity: '.7',
         zIndex: -1,
-        backgroundColor: "#000000",
-        position: "absolute",
-        width: "100%",
-        height: "100%",
+        backgroundColor: '#000000',
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
         top: 0,
         left: 0,
       },
     },
     navbar: {
-      listStyle: "none",
-      color: "#ffffff",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      listStyle: 'none',
+      color: '#ffffff',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       paddingTop: 80,
       paddingBottom: 80,
-      "& > li": {
+      '& > li': {
         marginLeft: 40,
-        "& > a": {
-          color: "#ffffff",
+        '& > a': {
+          color: '#ffffff',
           fontSize: 24,
-          fontFamily: "Montserrat-Regular",
-          textDecoration: "none",
+          fontFamily: 'Montserrat-Regular',
+          textDecoration: 'none',
         },
       },
-      [theme.breakpoints.down("xs")]: {
-        display: "none",
+      [theme.breakpoints.down('xs')]: {
+        display: 'none',
       },
     },
     profileImage: {
       width: 200,
       height: 200,
-      borderRadius: "50%",
+      borderRadius: '50%',
     },
     profileMobile: {
       paddingTop: 20,
-      display: "none",
-      [theme.breakpoints.down("xs")]: {
-        display: "flex",
-        justifyContent: "center",
+      display: 'none',
+      [theme.breakpoints.down('xs')]: {
+        display: 'flex',
+        justifyContent: 'center',
       },
     },
     backgroundBox: {
-      position: "relative",
-      width: "100%",
-      height: "auto",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      overflow: "hidden",
+      position: 'relative',
+      width: '100%',
+      height: 'auto',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      overflow: 'hidden',
     },
     textFromLeft: {
       fontSize: 60,
-      fontFamily: "Montserrat-Regular",
-      color: "#ffffff",
-      animationName: "$fadeLeft",
-      animationDuration: "3s",
+      fontFamily: 'Montserrat-Regular',
+      color: '#ffffff',
+      animationName: '$fadeLeft',
+      animationDuration: '3s',
       left: 0,
       padding: 15,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down('xs')]: {
         fontSize: 28,
       },
     },
     textFromRight: {
       fontSize: 60,
-      fontFamily: "Montserrat-Regular",
-      color: "#ffffff",
-      animationName: "$fadeRight",
-      animationDuration: "3s",
+      fontFamily: 'Montserrat-Regular',
+      color: '#ffffff',
+      animationName: '$fadeRight',
+      animationDuration: '3s',
       left: 0,
       padding: 15,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down('xs')]: {
         fontSize: 28,
       },
     },
-    "@keyframes fadeLeft": {
-      "0%": {
-        transform: "translateX(-400%)",
+    '@keyframes fadeLeft': {
+      '0%': {
+        transform: 'translateX(-400%)',
       },
-      "100%": {
-        transform: "translateX(0%)",
+      '100%': {
+        transform: 'translateX(0%)',
       },
     },
-    "@keyframes fadeRight": {
-      "0%": {
-        transform: "translateX(400%)",
+    '@keyframes fadeRight': {
+      '0%': {
+        transform: 'translateX(400%)',
       },
-      "100%": {
-        transform: "translateX(0%)",
+      '100%': {
+        transform: 'translateX(0%)',
       },
     },
     sectionTitle: {
       paddingTop: 100,
-      width: "100%",
+      width: '100%',
       fontSize: 100,
-      fontFamily: "Montserrat-Regular",
-      textAlign: "center",
-      color: "#ffffff",
-      [theme.breakpoints.down("xs")]: {
+      fontFamily: 'Montserrat-Regular',
+      textAlign: 'center',
+      color: '#ffffff',
+      [theme.breakpoints.down('xs')]: {
         fontSize: 60,
       },
     },
     aboutBox: {
-      display: "flex",
-      justifyContent: "center",
+      display: 'flex',
+      justifyContent: 'center',
       padding: 15,
-      width: "100%",
+      width: '100%',
     },
     aboutText: {
-      color: "#ffffff",
+      color: '#ffffff',
       fontSize: 24,
-      fontFamily: "Montserrat-Regular",
+      fontFamily: 'Montserrat-Regular',
       maxWidth: 600,
     },
     services: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       padding: 15,
-      width: "100%",
+      width: '100%',
     },
     servicesBox: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       padding: 15,
       maxWidth: 1240,
-      [theme.breakpoints.down("xs")]: {
-        flexDirection: "column",
+      [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column',
         padding: 0,
       },
     },
     serviceCard: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
       padding: 15,
-      width: "100%",
-      [theme.breakpoints.down("xs")]: {
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
         padding: 0,
       },
     },
     serviceTitle: {
-      color: "#ffffff",
-      fontFamily: "Montserrat-Regular",
+      color: '#ffffff',
+      fontFamily: 'Montserrat-Regular',
     },
     serviceText: {
-      color: "#ffffff",
+      color: '#ffffff',
       fontSize: 24,
-      fontFamily: "Montserrat-Regular",
-      maxWidth: "100%",
+      fontFamily: 'Montserrat-Regular',
+      maxWidth: '100%',
     },
   })
 );
@@ -180,13 +180,13 @@ const useStyles = makeStyles((theme: Theme) =>
 function Home() {
   const classes = useStyles();
 
-  if (typeof window === "object") {
+  if (typeof window === 'object') {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
         });
       });
     });
@@ -311,7 +311,7 @@ function Home() {
                   <img
                     src="/icon-sistem.png"
                     alt="Imagem web"
-                    style={{ width: 100, height: "auto" }}
+                    style={{ width: 100, height: 'auto' }}
                   />
                   <h1 className={classes.serviceTitle}>
                     Desenvolvimento de websites e Sistemas web
@@ -338,12 +338,12 @@ function Home() {
             </p>
             <div
               style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
               }}
             >
-              <div style={{ maxWidth: 1240, width: "100%", height: 600 }}>
+              <div style={{ maxWidth: 1240, width: '100%', height: 600 }}>
                 <Carousel />
               </div>
             </div>

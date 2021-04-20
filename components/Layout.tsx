@@ -1,32 +1,32 @@
-import React from "react";
-import Head from "next/head";
-import clsx from "clsx";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import React from 'react';
+import Head from 'next/head';
+import clsx from 'clsx';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles({
   list: {
     width: 250,
-    backgroundColor: "#708090",
-    height: "100%",
-    color: "#ffffff",
+    backgroundColor: '#708090',
+    height: '100%',
+    color: '#ffffff',
   },
   menuLink: {
-    color: "#ffffff",
-    textDecoration: "none",
+    color: '#ffffff',
+    textDecoration: 'none',
   },
   menu: {
     zIndex: 99,
-    color: "#ffffff",
-    position: "absolute",
+    color: '#ffffff',
+    position: 'absolute',
     top: 15,
     left: 15,
   },
@@ -34,24 +34,24 @@ const useStyles = makeStyles({
 
 const menus = [
   {
-    name: "Home",
-    link: "#",
+    name: 'Home',
+    link: '#',
   },
   {
-    name: "Quem sou",
-    link: "#about",
+    name: 'Quem sou',
+    link: '#about',
   },
   {
-    name: "Oque faço",
-    link: "#whatido",
+    name: 'Oque faço',
+    link: '#whatido',
   },
   {
-    name: "Portifólio",
-    link: "#portfolio",
+    name: 'Portifólio',
+    link: '#portfolio',
   },
   {
-    name: "Fale Comigo",
-    link: "#contact",
+    name: 'Fale Comigo',
+    link: '#contact',
   },
 ];
 
@@ -65,9 +65,9 @@ export default function SwipeableTemporaryDrawer(props) {
   ) => {
     if (
       event &&
-      event.type === "keydown" &&
-      ((event as React.KeyboardEvent).key === "Tab" ||
-        (event as React.KeyboardEvent).key === "Shift")
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
     ) {
       return;
     }
@@ -86,7 +86,7 @@ export default function SwipeableTemporaryDrawer(props) {
         {menus.map((menu, index) => (
           <a
             href={menu.link}
-            key={"menu-" + menu.name}
+            key={'menu-' + menu.name}
             className={classes.menuLink}
           >
             <ListItem button key={menu.name}>

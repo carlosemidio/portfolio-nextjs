@@ -1,12 +1,12 @@
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
 
 export default function (req, res) {
   const { name, email, phone, subject, message } = req.body;
 
-  let nodemailer = require("nodemailer");
+  let nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
     port: 465,
-    host: "smtp.gmail.com",
+    host: 'smtp.gmail.com',
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -22,13 +22,17 @@ export default function (req, res) {
     ${email}</p><p>email: ${email}</p><p>Telefone: ${phone}</p>`,
   };
 
+  console.log(
+    `Email: ${process.env.EMAIL_USER} Senha: ${process.env.EMAIL_PASS}`
+  );
+
   transporter.sendMail(mailOption, (err, data) => {
     if (err) {
       console.log(err);
-      res.send("error" + JSON.stringify(err));
+      res.status(500).json({ error: JSON.stringify(err) });
     } else {
-      console.log("mail send");
-      res.send("success");
+      console.log('mail send');
+      res.status(200).json({ success: 'Email enviado com sucesso!' });
     }
   });
 }

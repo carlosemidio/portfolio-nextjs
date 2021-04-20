@@ -1,54 +1,54 @@
-import React, { useState } from "react";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import createStyles from "@material-ui/core/styles/createStyles";
-import { Theme } from "@material-ui/core/styles/createMuiTheme";
-import CloseIcon from "@material-ui/icons/Close";
-import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import Gallery from "../components/Gallery";
+import React, { useState } from 'react';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import createStyles from '@material-ui/core/styles/createStyles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import CloseIcon from '@material-ui/icons/Close';
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import Gallery from '../components/Gallery';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       maxWidth: 800,
-      width: "100%",
-      height: "auto",
-      backgroundColor: "#ffffff",
-      position: "relative",
+      width: '100%',
+      height: 'auto',
+      backgroundColor: '#ffffff',
+      position: 'relative',
       paddingBottom: 30,
     },
     image: {
-      width: "100%",
+      width: '100%',
     },
     title: {
-      textAlign: "center",
+      textAlign: 'center',
       padding: 15,
     },
     description: {
-      textAlign: "center",
+      textAlign: 'center',
     },
     closeIconBox: {
-      position: "absolute",
+      position: 'absolute',
       top: 10,
       right: 10,
     },
     closeIcon: {
-      position: "relative",
-      cursor: "pointer",
+      position: 'relative',
+      cursor: 'pointer',
       zIndex: 0,
-      backgroundColor: "rgba(0,0,0,.7)",
-      color: "#ffffff",
+      backgroundColor: 'rgba(0,0,0,.7)',
+      color: '#ffffff',
     },
     fullscreenIconBox: {
-      position: "absolute",
+      position: 'absolute',
       top: 10,
       left: 10,
     },
     fullscreenIcon: {
-      position: "relative",
-      cursor: "pointer",
+      position: 'relative',
+      cursor: 'pointer',
       zIndex: 0,
-      backgroundColor: "rgba(0,0,0,.7)",
-      color: "#ffffff",
+      backgroundColor: 'rgba(0,0,0,.7)',
+      color: '#ffffff',
     },
   })
 );

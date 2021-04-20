@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Card,
   CardContent,
   CardActions,
   TextField,
   Button,
-} from "@material-ui/core";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import createStyles from "@material-ui/core/styles/createStyles";
-import { Theme } from "@material-ui/core/styles/createMuiTheme";
-import { withFormik, FormikProps } from "formik";
-import * as yup from "yup";
-import InputMask from "react-input-mask";
-import { trim, size } from "lodash";
+} from '@material-ui/core';
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import createStyles from '@material-ui/core/styles/createStyles';
+import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import { withFormik, FormikProps } from 'formik';
+import * as yup from 'yup';
+import InputMask from 'react-input-mask';
+import { trim, size } from 'lodash';
 import {
   NotificationContainer,
   NotificationManager,
-} from "react-notifications";
+} from 'react-notifications';
 
 const createEmailNotification = (type, name) => {
   switch (type) {
-    case "success":
+    case 'success':
       NotificationManager.success(
-        "Assim que possível entrarei em contato com você!",
+        'Assim que possível entrarei em contato com você!',
         `Olá ${name}, recebi o seu email!`
       );
       break;
-    case "error":
+    case 'error':
       NotificationManager.error(
-        "Tente novamente mais tarde ou me contate via whatsapp!",
+        'Tente novamente mais tarde ou me contate via whatsapp!',
         `Olá ${name}, infelizmente houve um ao enviar seu email!`
       );
       break;
@@ -39,42 +39,42 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     card: {
       maxWidth: 600,
-      background: "none",
-      position: "relative",
+      background: 'none',
+      position: 'relative',
       zIndex: 0,
-      "&::after": {
+      '&::after': {
         content: '""',
-        opacity: ".8",
+        opacity: '.8',
         zIndex: -1,
-        backgroundColor: "#ffffff",
-        position: "absolute",
-        width: "100%",
-        height: "100%",
+        backgroundColor: '#ffffff',
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
         top: 0,
         left: 0,
       },
     },
     container: {
-      display: "Flex",
-      justifyContent: "center",
+      display: 'Flex',
+      justifyContent: 'center',
     },
     actions: {
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
     },
   })
 );
 
 const validationsForm = {
-  name: yup.string().required("O nome é obrigatório"),
+  name: yup.string().required('O nome é obrigatório'),
   email: yup
     .string()
-    .email("Informe um email válido")
-    .required("O email é obrigatório"),
+    .email('Informe um email válido')
+    .required('O email é obrigatório'),
   phone: yup.string(),
-  subject: yup.string().required("O assunto é obrigatório"),
-  message: yup.string().required("A mensagem é obrigatória"),
+  subject: yup.string().required('O assunto é obrigatório'),
+  message: yup.string().required('A mensagem é obrigatória'),
 };
 
 // Shape of form values
@@ -99,7 +99,7 @@ const form = (props: FormikProps<FormValues>) => {
   } = props;
 
   const classes = useStyles();
-  const [mask, setMask] = useState("(99) 99999-9999");
+  const [mask, setMask] = useState('(99) 99999-9999');
 
   return (
     <div className={classes.container}>
@@ -113,7 +113,7 @@ const form = (props: FormikProps<FormValues>) => {
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              helperText={touched.name ? errors.name : ""}
+              helperText={touched.name ? errors.name : ''}
               error={touched.name && Boolean(errors.name)}
               margin="dense"
               variant="outlined"
@@ -126,7 +126,7 @@ const form = (props: FormikProps<FormValues>) => {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              helperText={touched.email ? errors.email : ""}
+              helperText={touched.email ? errors.email : ''}
               error={touched.email && Boolean(errors.email)}
               margin="dense"
               variant="outlined"
@@ -135,13 +135,13 @@ const form = (props: FormikProps<FormValues>) => {
             <InputMask
               mask={mask}
               onBlur={(e) => {
-                if (size(trim(e.target.value, "_")) === 14) {
-                  setMask("(99) 9999-9999");
+                if (size(trim(e.target.value, '_')) === 14) {
+                  setMask('(99) 9999-9999');
                 }
               }}
               onFocus={(e) => {
-                if (size(trim(e.target.value, "_")) === 14) {
-                  setMask("(99) 99999-9999");
+                if (size(trim(e.target.value, '_')) === 14) {
+                  setMask('(99) 99999-9999');
                 }
               }}
               value={values.phone}
@@ -155,7 +155,7 @@ const form = (props: FormikProps<FormValues>) => {
                   name="phone"
                   label="Telefone"
                   value={values.phone}
-                  helperText={touched.phone ? errors.phone : ""}
+                  helperText={touched.phone ? errors.phone : ''}
                   error={touched.phone && Boolean(errors.phone)}
                   type="text"
                   margin="dense"
@@ -170,7 +170,7 @@ const form = (props: FormikProps<FormValues>) => {
               value={values.subject}
               onChange={handleChange}
               onBlur={handleBlur}
-              helperText={touched.subject ? errors.subject : ""}
+              helperText={touched.subject ? errors.subject : ''}
               error={touched.subject && Boolean(errors.subject)}
               margin="dense"
               variant="outlined"
@@ -182,7 +182,7 @@ const form = (props: FormikProps<FormValues>) => {
               value={values.message}
               onChange={handleChange}
               onBlur={handleBlur}
-              helperText={touched.message ? errors.message : ""}
+              helperText={touched.message ? errors.message : ''}
               error={touched.message && Boolean(errors.message)}
               multiline
               rows={6}
@@ -216,11 +216,11 @@ interface MyFormProps {
 const Form = withFormik<MyFormProps, FormValues>({
   mapPropsToValues: ({ name, email, subject, phone, message }) => {
     return {
-      name: name || "",
-      email: email || "",
-      phone: phone || "",
-      subject: subject || "",
-      message: message || "",
+      name: name || '',
+      email: email || '',
+      phone: phone || '',
+      subject: subject || '',
+      message: message || '',
     };
   },
 
@@ -229,20 +229,19 @@ const Form = withFormik<MyFormProps, FormValues>({
   handleSubmit: (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
 
-    fetch("/api/contact", {
-      method: "POST",
+    fetch('/api/contact', {
+      method: 'POST',
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     }).then((res) => {
-      console.log("Response received");
       if (res.status === 200) {
-        createEmailNotification("success", values.name);
+        createEmailNotification('success', values.name);
         resetForm();
       } else {
-        createEmailNotification("error", values.name);
+        createEmailNotification('error', values.name);
       }
 
       console.log(res);
