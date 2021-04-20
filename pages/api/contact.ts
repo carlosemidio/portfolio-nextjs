@@ -17,9 +17,9 @@ export default function (req, res) {
     from: email,
     to: process.env.EMAIL_USER,
     subject: subject,
-    text: `${message} | Enviado por: ${email} Telefone: ${phone}`,
+    text: `${message} | Enviado por: ${name} email: ${email} Telefone: ${phone}`,
     html: `<div>${message}</div><p>Enviado por:
-    ${email}</p><p>Telefone: ${phone}</p>`,
+    ${email}</p><p>email: ${email}</p><p>Telefone: ${phone}</p>`,
   };
 
   transporter.sendMail(mailOption, (err, data) => {

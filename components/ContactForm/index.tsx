@@ -19,22 +19,20 @@ import {
 } from "react-notifications";
 
 const createEmailNotification = (type, name) => {
-  return () => {
-    switch (type) {
-      case "success":
-        NotificationManager.success(
-          `Olá ${name} recebi o seu email!`,
-          "Assim que possível entrarei em contato com você!"
-        );
-        break;
-      case "error":
-        NotificationManager.error(
-          `Olá ${name}, infelizmente houve um ao enviar seu email!`,
-          "Tente novamente mais tarde ou me contate via whatsapp!"
-        );
-        break;
-    }
-  };
+  switch (type) {
+    case "success":
+      NotificationManager.success(
+        "Assim que possível entrarei em contato com você!",
+        `Olá ${name}, recebi o seu email!`
+      );
+      break;
+    case "error":
+      NotificationManager.error(
+        "Tente novamente mais tarde ou me contate via whatsapp!",
+        `Olá ${name}, infelizmente houve um ao enviar seu email!`
+      );
+      break;
+  }
 };
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -242,11 +240,12 @@ const Form = withFormik<MyFormProps, FormValues>({
       console.log("Response received");
       if (res.status === 200) {
         createEmailNotification("success", values.name);
-        setSubmitting(false);
         resetForm();
+      } else {
+        createEmailNotification("error", values.name);
       }
 
-      createEmailNotification("error", values.name);
+      console.log(res);
       setSubmitting(false);
     });
   },

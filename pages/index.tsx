@@ -292,11 +292,14 @@ function Home() {
             </p>
             <div className={classes.aboutBox}>
               <p className={classes.aboutText}>
-                Me chamo Carlos, sou desenvolvedor web com mais de 3 anos de
-                experiência, projetando soluções e criando bons laços de
-                parceiria com clientes e colegas da área. Para mim cada projeto
-                é mais uma chance de melhorar a vida das pessoas: ajudando a
-                atrair mais clientes, automatizando processos, etc...
+                Me chamo Carlos, sou graduando em Análise e Desenvolvimento de
+                Sistemas na UFRN e ex Bacharelando em Tecnologia da Informação
+                na mesma instituição, sou desenvolvedor web com mais de 3 anos
+                de experiência, desde 2017 venho projetando e desenvolvendo
+                soluções para diversas áreas. Minha principal ocupação
+                profissional no momento é como bolsista na universidade onde
+                atuo como gerente de projeto e desenvolvedor do site do Museu
+                Câmara Cascudo (Maior museu do Rio Grande do Norte).
               </p>
             </div>
             <p className={classes.sectionTitle} id="whatido">
@@ -314,8 +317,18 @@ function Home() {
                     Desenvolvimento de websites e Sistemas web
                   </h1>
                   <p className={classes.serviceText}>
-                    Sites institucionais, blogs, portais de notícias, ecomerces,
-                    dashboards, sistemas de gestão, etc...
+                    Sites institucionais
+                    <br /> Blogs
+                    <br />
+                    Portais de notícias
+                    <br />
+                    Ecomerces
+                    <br />
+                    Dashboards
+                    <br />
+                    Sistemas de gestão
+                    <br />
+                    Entre outros
                   </p>
                 </div>
               </div>
