@@ -86,14 +86,29 @@ class Index extends Component<Props> {
         image: "/projects/tuttortv/card.jpeg",
         images: [
           "/projects/tuttortv/card.jpeg",
-          "/projects/tuttortv/card.jpeg",
-          "/projects/tuttortv/card.jpeg",
-          "/projects/tuttortv/card.jpeg",
+          "/projects/tuttortv/card2.jpeg",
+          "/projects/tuttortv/card3.jpeg",
+          "/projects/tuttortv/card4.jpeg",
+          "/projects/tuttortv/card5.jpeg",
         ],
         link: "https://www.tuttor.tv/",
         headline: "Tuttor tv",
         description:
           "Plataform de cursos online do Instituto Mondelli desenvolvido em Wordpress com o Tema Eduma",
+      },
+      {
+        image: "/projects/portaldatropical/card.jpeg",
+        images: [
+          "/projects/portaldatropical/card.jpeg",
+          "/projects/portaldatropical/card2.jpeg",
+          "/projects/portaldatropical/card3.jpeg",
+          "/projects/portaldatropical/card4.jpeg",
+          "/projects/portaldatropical/card5.jpeg",
+        ],
+        link: "https://portaldatropical.com.br/",
+        headline: "Portal da TV Tropical",
+        description:
+          "Um dos maiores portais de notícias do Rio Grande do Norte desenvolvido com Reactjs no frontend e Laravel no backend. Serviço prestado como PJ na Agência Maxmeio (RN)",
       },
     ];
 

@@ -15,7 +15,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     card: {
-      margin: "0 20px",
+      margin: "0 5px",
       height: 400,
     },
     cardLink: {

@@ -55,9 +55,10 @@ const menus = [
   },
 ];
 
-export default function SwipeableTemporaryDrawer() {
+export default function SwipeableTemporaryDrawer(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const { children } = props;
 
   const toggleDrawer = (open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent
@@ -122,6 +123,7 @@ export default function SwipeableTemporaryDrawer() {
         >
           {list()}
         </SwipeableDrawer>
+        {children}
       </React.Fragment>
     </div>
   );

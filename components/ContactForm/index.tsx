@@ -13,6 +13,29 @@ import { withFormik, FormikProps } from "formik";
 import * as yup from "yup";
 import InputMask from "react-input-mask";
 import { trim, size } from "lodash";
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
+
+const createEmailNotification = (type, name) => {
+  return () => {
+    switch (type) {
+      case "success":
+        NotificationManager.success(
+          `Olá ${name} recebi o seu email!`,
+          "Assim que possível entrarei em contato com você!"
+        );
+        break;
+      case "error":
+        NotificationManager.error(
+          `Olá ${name}, infelizmente houve um ao enviar seu email!`,
+          "Tente novamente mais tarde ou me contate via whatsapp!"
+        );
+        break;
+    }
+  };
+};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -82,6 +105,7 @@ const form = (props: FormikProps<FormValues>) => {
 
   return (
     <div className={classes.container}>
+      <NotificationContainer />
       <form onSubmit={handleSubmit}>
         <Card className={classes.card}>
           <CardContent>
@@ -205,10 +229,26 @@ const Form = withFormik<MyFormProps, FormValues>({
   validationSchema: yup.object().shape(validationsForm),
 
   handleSubmit: (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      // submit to the server
-      console.log(JSON.stringify(values));
-    }, 1000);
+    setSubmitting(true);
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        createEmailNotification("success", values.name);
+        setSubmitting(false);
+        resetForm();
+      }
+
+      createEmailNotification("error", values.name);
+      setSubmitting(false);
+    });
   },
 })(form);
 

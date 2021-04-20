@@ -247,94 +247,101 @@ function Home() {
       </Head>
 
       <main className={classes.root} id="home">
-        <Layout />
-        <ul className={classes.navbar}>
-          <li>
-            <a href="#about">QUEM SOU</a>
-          </li>
-          <li>
-            <a href="#whatido">O QUE FAÇO</a>
-          </li>
-          <li>
-            <img
-              src="/perfil.jpeg"
-              alt="Imagem de perfil"
-              className={classes.profileImage}
-            />
-          </li>
-          <li>
-            <a href="#portfolio">PORTFÓLIO</a>
-          </li>
-          <li>
-            <a href="#contact">FALE COMIGO</a>
-          </li>
-        </ul>
-        <div className={classes.profileMobile}>
-          <img
-            src="/perfil.jpeg"
-            alt="Imagem de perfil"
-            className={classes.profileImage}
-          />
-        </div>
-        <div className={classes.backgroundBox}>
-          <div className={classes.textFromLeft}>
-            Desenvolvendo soluções inteligentes
-          </div>
-        </div>
-        <div className={classes.backgroundBox}>
-          <div className={classes.textFromRight}>
-            Sob medida para o seu negócio
-          </div>
-        </div>
-        <p className={classes.sectionTitle} id="about">
-          Sobre mim
-        </p>
-        <div className={classes.aboutBox}>
-          <p className={classes.aboutText}>
-            Me chamo Carlos, sou desenvolvedor web com mais de 3 anos de
-            experiência, projetando soluções e criando bons laços de parceiria
-            com clientes e colegas da área. Para mim cada projeto é mais uma
-            chance de melhorar a vida das pessoas: ajudando a atrair mais
-            clientes, automatizando processos, etc...
-          </p>
-        </div>
-        <p className={classes.sectionTitle} id="whatido">
-          Oque faço
-        </p>
-        <div className={classes.services}>
-          <div className={classes.servicesBox}>
-            <div className={classes.serviceCard}>
+        <Layout>
+          <>
+            <ul className={classes.navbar}>
+              <li>
+                <a href="#about">QUEM SOU</a>
+              </li>
+              <li>
+                <a href="#whatido">O QUE FAÇO</a>
+              </li>
+              <li>
+                <img
+                  src="/perfil.jpeg"
+                  alt="Imagem de perfil"
+                  className={classes.profileImage}
+                />
+              </li>
+              <li>
+                <a href="#portfolio">PORTFÓLIO</a>
+              </li>
+              <li>
+                <a href="#contact">FALE COMIGO</a>
+              </li>
+            </ul>
+            <div className={classes.profileMobile}>
               <img
-                src="/icon-sistem.png"
-                alt="Imagem web"
-                style={{ width: 100, height: "auto" }}
+                src="/perfil.jpeg"
+                alt="Imagem de perfil"
+                className={classes.profileImage}
               />
-              <h1 className={classes.serviceTitle}>
-                Desenvolvimento de websites e Sistemas web
-              </h1>
-              <p className={classes.serviceText}>
-                Sites institucionais, blogs, portais de notícias, ecomerces,
-                dashboards, sistemas de gestão, etc...
+            </div>
+            <div className={classes.backgroundBox}>
+              <div className={classes.textFromLeft}>
+                Desenvolvendo soluções inteligentes
+              </div>
+            </div>
+            <div className={classes.backgroundBox}>
+              <div className={classes.textFromRight}>
+                Sob medida para o seu negócio
+              </div>
+            </div>
+            <p className={classes.sectionTitle} id="about">
+              Sobre mim
+            </p>
+            <div className={classes.aboutBox}>
+              <p className={classes.aboutText}>
+                Me chamo Carlos, sou desenvolvedor web com mais de 3 anos de
+                experiência, projetando soluções e criando bons laços de
+                parceiria com clientes e colegas da área. Para mim cada projeto
+                é mais uma chance de melhorar a vida das pessoas: ajudando a
+                atrair mais clientes, automatizando processos, etc...
               </p>
             </div>
-          </div>
-        </div>
-        <p className={classes.sectionTitle} id="portfolio">
-          Portfólio
-        </p>
-        <div
-          style={{ width: "100%", display: "flex", justifyContent: "center" }}
-        >
-          <div style={{ maxWidth: 1240, width: "100%", height: 600 }}>
-            <Carousel />
-          </div>
-        </div>
-        <p className={classes.sectionTitle} id="contact">
-          Contato
-        </p>
-        <div className={classes.aboutBox}>
-          <ContactForm />
-        </div>
+            <p className={classes.sectionTitle} id="whatido">
+              Oque faço
+            </p>
+            <div className={classes.services}>
+              <div className={classes.servicesBox}>
+                <div className={classes.serviceCard}>
+                  <img
+                    src="/icon-sistem.png"
+                    alt="Imagem web"
+                    style={{ width: 100, height: "auto" }}
+                  />
+                  <h1 className={classes.serviceTitle}>
+                    Desenvolvimento de websites e Sistemas web
+                  </h1>
+                  <p className={classes.serviceText}>
+                    Sites institucionais, blogs, portais de notícias, ecomerces,
+                    dashboards, sistemas de gestão, etc...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p className={classes.sectionTitle} id="portfolio">
+              Portfólio
+            </p>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <div style={{ maxWidth: 1240, width: "100%", height: 600 }}>
+                <Carousel />
+              </div>
+            </div>
+            <p className={classes.sectionTitle} id="contact">
+              Contato
+            </p>
+            <div className={classes.aboutBox}>
+              <ContactForm />
+            </div>
+          </>
+        </Layout>
       </main>
     </div>
   );
