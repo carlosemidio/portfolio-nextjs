@@ -1,34 +1,26 @@
-const nodemailer = require('nodemailer');
-
-export default async function (req, res) {
+export default function (req, res) {
   const { name, email, phone, subject, message } = req.body;
 
-  let nodemailer = require('nodemailer');
-  const transporter = nodemailer.createTransport({
-    port: 465,
-    host: 'smtp.gmail.com',
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-    secure: true,
-  });
-  const mailOption = {
-    from: email,
-    to: process.env.EMAIL_USER,
+  const sgMail = require('@sendgrid/mail');
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+  const msg = {
+    to: 'carlosemidiopereira@gmail.com', // Change to your recipient
+    from: 'carlosemidiopereira@gmail.com', // Change to your verified sender
     subject: subject,
     text: `${message} | Enviado por: ${name} email: ${email} Telefone: ${phone}`,
     html: `<div>${message}</div><p>Enviado por:
-    ${email}</p><p>email: ${email}</p><p>Telefone: ${phone}</p>`,
+    ${name}</p><p>email: ${email}</p><p>Telefone: ${phone}</p>`,
   };
 
-  await transporter.sendMail(mailOption, (err, data) => {
-    if (err) {
-      console.log(err);
-      res.status(500).json({ error: JSON.stringify(err) });
-    } else {
-      console.log('mail send');
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log('Email sent');
       res.status(200).json({ success: 'Email enviado com sucesso!' });
-    }
-  });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ error: JSON.stringify(error) });
+    });
 }
