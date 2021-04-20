@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-export default function (req, res) {
+export default async function (req, res) {
   const { name, email, phone, subject, message } = req.body;
 
   let nodemailer = require('nodemailer');
@@ -22,11 +22,7 @@ export default function (req, res) {
     ${email}</p><p>email: ${email}</p><p>Telefone: ${phone}</p>`,
   };
 
-  console.log(
-    `Email: ${process.env.EMAIL_USER} Senha: ${process.env.EMAIL_PASS}`
-  );
-
-  transporter.sendMail(mailOption, (err, data) => {
+  await transporter.sendMail(mailOption, (err, data) => {
     if (err) {
       console.log(err);
       res.status(500).json({ error: JSON.stringify(err) });
