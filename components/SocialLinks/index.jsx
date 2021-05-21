@@ -2,7 +2,7 @@ import { SocialIcon } from 'react-social-icons';
 import React from 'react';
 import styles from './styles.module.scss';
 
-const SocialLinks: React.FC = () => {
+const SocialLinks = () => {
   return (
     <div>
       <ul className={styles.links}>
