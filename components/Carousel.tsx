@@ -110,6 +110,19 @@ class Index extends Component<Props> {
         description:
           'Um dos maiores portais de notícias do Rio Grande do Norte desenvolvido com Reactjs no frontend e Laravel no backend. Serviço prestado como PJ na Agência Maxmeio (RN)',
       },
+      {
+        image: '/projects/siscrede/card.png',
+        images: [
+          '/projects/siscrede/card.png',
+          '/projects/siscrede/card2.png',
+          '/projects/siscrede/card3.png',
+          '/projects/siscrede/card4.png',
+          '/projects/siscrede/card5.png',
+        ],
+        headline: 'Sistema de gestão Siscred',
+        description: `Sistema de gestão para engenheiros que prestam serviços como autônomos.
+        As funcionalidades incluem, controle de serviços e despesas e vários relatórios de faturamento`,
+      },
     ];
 
     const responsive = {
