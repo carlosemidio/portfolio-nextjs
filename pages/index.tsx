@@ -5,21 +5,10 @@ import Carousel from '../components/Carousel';
 import ContactForm from '../components/ContactForm';
 import SocialLinks from '../components/SocialLinks';
 import useStyles from '../styles/home';
+import Navbar from '../components/Navbar';
 
 function Home() {
   const classes = useStyles();
-
-  if (typeof window === 'object') {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-        });
-      });
-    });
-  }
 
   return (
     <div>
@@ -79,34 +68,7 @@ function Home() {
         <Layout>
           <>
             <SocialLinks />
-            <ul className={classes.navbar}>
-              <li>
-                <a href="#about">QUEM SOU</a>
-              </li>
-              <li>
-                <a href="#whatido">O QUE FAÇO</a>
-              </li>
-              <li>
-                <img
-                  src="/perfil.jpeg"
-                  alt="Imagem de perfil"
-                  className={classes.profileImage}
-                />
-              </li>
-              <li>
-                <a href="#portfolio">PORTFÓLIO</a>
-              </li>
-              <li>
-                <a href="#contact">FALE COMIGO</a>
-              </li>
-            </ul>
-            <div className={classes.profileMobile}>
-              <img
-                src="/perfil.jpeg"
-                alt="Imagem de perfil"
-                className={classes.profileImage}
-              />
-            </div>
+            <Navbar />
             <div className={classes.backgroundBox}>
               <div className={classes.textFromLeft}>
                 Desenvolvendo soluções inteligentes

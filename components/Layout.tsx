@@ -35,23 +35,27 @@ const useStyles = makeStyles({
 const menus = [
   {
     name: 'Home',
-    link: '#',
+    link: '/#',
   },
   {
     name: 'Quem sou',
-    link: '#about',
+    link: '/#about',
   },
   {
     name: 'Oque faço',
-    link: '#whatido',
+    link: '/#whatido',
   },
   {
     name: 'Portifólio',
-    link: '#portfolio',
+    link: '/#portfolio',
+  },
+  {
+    name: 'Blog',
+    link: '/blog',
   },
   {
     name: 'Fale Comigo',
-    link: '#contact',
+    link: '/#contact',
   },
 ];
 
