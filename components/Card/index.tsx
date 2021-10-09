@@ -69,7 +69,7 @@ interface ModuleCardProps {
   modulePage?: string;
   moduleDescription?: string;
   handleOpen?: () => void;
-  appFontSize: number;
+  appFontSize?: number;
 }
 
 const Module = React.memo((props: ModuleCardProps) => {
@@ -81,7 +81,7 @@ const Module = React.memo((props: ModuleCardProps) => {
         avatar={props.avatarUrl && <Avatar src={props.avatarUrl} />}
         className={classes.cardTitle}  
         title={
-          <p style={{ fontSize: 10 + props.appFontSize }}>
+          <p style={{ fontSize: 10 + props.appFontSize ? props.appFontSize : 16 }}>
             {props.module.title}
           </p>
         }
@@ -102,7 +102,7 @@ const Module = React.memo((props: ModuleCardProps) => {
             color="textSecondary"
             className={classes.cardDescription}
             component="p"
-            style={{ fontSize: props.appFontSize }}
+            style={{ fontSize: props.appFontSize ? props.appFontSize : 16 }}
           >
             {props.moduleDescription}
           </Typography>
