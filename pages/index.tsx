@@ -128,7 +128,7 @@ function Home() {
                   <img
                     src="/icon-sistem.png"
                     alt="Imagem web"
-                    width={100}
+                    width={'100px'}
                     height={'auto'}
                   />
                   <h1 className={classes.serviceTitle}>
