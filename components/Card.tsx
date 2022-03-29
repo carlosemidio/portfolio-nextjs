@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
       cursor: 'default',
     },
     text: {
-      fontFamily: 'Montserrat-Regular',
+      fontFamily: "'Montserrat', sans-serif",
     },
     content: {
       display: 'flex',

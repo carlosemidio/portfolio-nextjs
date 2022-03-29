@@ -1,9 +1,9 @@
 import { createStyles, makeStyles } from "@material-ui/core";
 
-const MontserratRegular = {
-  fontFamily: "Montserrat-Regular",
+const Montserrat = {
+  fontFamily: "Montserrat",
   fontStyle: "normal",
-  src: `url("/fonts/montserrat/Montserrat-Regular.ttf")`,
+  src: `url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap")`,
   fontDisplay: 'swap',
 };
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() =>
         padding: 0,
         outline: 0,
         boxSizing: "border-box",
-        fontFamily: "Montserrat-Regular",
+        fontFamily: "'Montserrat', sans-serif",
       },
       body: {
         margin: 0,
@@ -23,7 +23,7 @@ const useStyles = makeStyles(() =>
         backgroundColor: "#708090",
       },
     },
-    "@font-face": [MontserratRegular],
+    "@font-face": [Montserrat],
   })
 );
 
