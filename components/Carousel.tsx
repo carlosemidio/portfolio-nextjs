@@ -44,13 +44,13 @@ class Index extends Component<Props> {
     const { classes } = this.props;
     const projects = [
       {
-        image: '/projects/cepac/card.jpeg',
+        image: '/projects/cepac/card-min.png',
         images: [
-          '/projects/cepac/card.jpeg',
-          '/projects/cepac/card2.jpeg',
-          '/projects/cepac/card3.jpeg',
-          '/projects/cepac/card4.jpeg',
-          '/projects/cepac/card5.jpeg',
+          '/projects/cepac/card.png',
+          '/projects/cepac/card2.png',
+          '/projects/cepac/card3.png',
+          '/projects/cepac/card4.png',
+          '/projects/cepac/card5.png',
         ],
         link: 'https://www.cepacbarueri.org.br/',
         headline: 'Site da ONG CEPAC Barueri',

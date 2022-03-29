@@ -4,18 +4,7 @@ const MontserratRegular = {
   fontFamily: "Montserrat-Regular",
   fontStyle: "normal",
   src: `url("/fonts/montserrat/Montserrat-Regular.ttf")`,
-};
-
-const MontserratLight = {
-  fontFamily: "Montserrat-Light",
-  fontStyle: "medium",
-  src: `url("/fonts/montserrat/Montserrat-Light.ttf")`,
-};
-
-const MontserratBold = {
-  fontFamily: "Montserrat-Bold",
-  fontStyle: "medium",
-  src: `url("/fonts/montserrat/Montserrat-Bold.ttf")`,
+  fontDisplay: 'swap',
 };
 
 const useStyles = makeStyles(() =>
@@ -34,7 +23,7 @@ const useStyles = makeStyles(() =>
         backgroundColor: "#708090",
       },
     },
-    "@font-face": [MontserratLight, MontserratRegular, MontserratBold],
+    "@font-face": [MontserratRegular],
   })
 );
 

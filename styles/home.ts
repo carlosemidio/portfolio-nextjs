@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
-      backgroundImage: "url('/background.png')",
+      backgroundImage: "url('/background-min.png')",
       backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center top',

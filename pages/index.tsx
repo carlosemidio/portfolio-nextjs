@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Carousel from '../components/Carousel';
@@ -45,7 +44,7 @@ function Home() {
         {/* Open Graph */}
         <meta property="OG TAG" content="VALOR" />
         <meta property="og:title" content="Carlos Emídio" />
-        <meta property="og:image" content="/perfil.jpeg" />
+        <meta property="og:image" content="/perfil.png" />
         <meta property="og:image:type" content="image/*" />
         <meta
           property="og:description"
@@ -57,19 +56,7 @@ function Home() {
         <meta property="og:site_name" content="Carlos Emídio" />
         <link
           rel="preload"
-          href="/fonts/montserrat/Montserrat-Bold.ttf"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
           href="/fonts/montserrat/Montserrat-Regular.ttf"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/montserrat/Montserrat-Light.ttf"
           as="font"
           crossOrigin=""
         />
@@ -88,7 +75,7 @@ function Home() {
               </li>
               <li>
                 <img
-                  src="/perfil.jpeg"
+                  src="/perfil.png"
                   alt="Imagem de perfil"
                   className={classes.profileImage}
                 />
@@ -102,7 +89,7 @@ function Home() {
             </ul>
             <div className={classes.profileMobile}>
               <img
-                src="/perfil.jpeg"
+                src="/perfil.png"
                 alt="Imagem de perfil"
                 className={classes.profileImage}
               />
@@ -141,7 +128,8 @@ function Home() {
                   <img
                     src="/icon-sistem.png"
                     alt="Imagem web"
-                    style={{ width: 100, height: 'auto' }}
+                    width={100}
+                    height={'auto'}
                   />
                   <h1 className={classes.serviceTitle}>
                     Desenvolvimento de websites e Sistemas web
