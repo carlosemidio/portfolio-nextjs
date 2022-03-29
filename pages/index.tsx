@@ -129,7 +129,7 @@ function Home() {
                     src="/icon-sistem.png"
                     alt="Imagem web"
                     width={'100px'}
-                    height={'auto'}
+                    height={'64px'}
                   />
                   <h1 className={classes.serviceTitle}>
                     Desenvolvimento de websites e Sistemas web
