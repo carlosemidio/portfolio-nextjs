@@ -57,7 +57,7 @@ function Home() {
         <meta property="og:site_name" content="Carlos Emídio" />
         <link
           rel="preload"
-          href="/fonts/montserrat/Montserrat-Regular.ttf"
+          href="/fonts/montserrat/Montserrat-Regular.ttf&display=swap"
           as="font"
           crossOrigin=""
         />
