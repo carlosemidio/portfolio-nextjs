@@ -15,7 +15,7 @@ const useStyles = makeStyles(() =>
         padding: 0,
         outline: 0,
         boxSizing: "border-box",
-        fontFamily: "'Montserrat', sans-serif",
+        fontFamily: `"Montserrat", "sans-serif"`,
       },
       body: {
         margin: 0,

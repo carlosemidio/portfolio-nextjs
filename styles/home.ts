@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme: Theme) =>
         '& > a': {
           color: '#ffffff',
           fontSize: 24,
-          fontFamily: "'Montserrat', sans-serif",
           textDecoration: 'none',
         },
       },
@@ -68,7 +67,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textFromLeft: {
       fontSize: 60,
-      fontFamily: "'Montserrat', sans-serif",
       color: '#ffffff',
       animationName: '$fadeLeft',
       animationDuration: '3s',
@@ -80,7 +78,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textFromRight: {
       fontSize: 60,
-      fontFamily: "'Montserrat', sans-serif",
       color: '#ffffff',
       animationName: '$fadeRight',
       animationDuration: '3s',
@@ -110,7 +107,6 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: 40,
       width: '100%',
       fontSize: 100,
-      fontFamily: "'Montserrat', sans-serif",
       textAlign: 'center',
       color: '#ffffff',
       [theme.breakpoints.down('xs')]: {
@@ -126,7 +122,6 @@ const useStyles = makeStyles((theme: Theme) =>
     aboutText: {
       color: '#ffffff',
       fontSize: 24,
-      fontFamily: "'Montserrat', sans-serif",
       maxWidth: 600,
     },
     services: {
@@ -159,12 +154,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     serviceTitle: {
       color: '#ffffff',
-      fontFamily: "'Montserrat', sans-serif",
     },
     serviceText: {
       color: '#ffffff',
       fontSize: 24,
-      fontFamily: "'Montserrat', sans-serif",
       maxWidth: '100%',
     },
   })

@@ -84,6 +84,8 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://www.carlosemidio.com.br/" />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:site_name" content="Carlos Emídio" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='' />
           <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="preload" as="font" />
         </Head>
         <body>
