@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import createStyles from '@material-ui/core/styles/createStyles';
@@ -24,9 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cardLinkLess: {
       cursor: 'default',
-    },
-    media: {
-      height: 240,
     },
     text: {
       fontFamily: 'Montserrat-Regular',
@@ -58,11 +56,14 @@ function MediaCard(props) {
           rel="noopener noreferrer"
         >
           <CardActionArea style={{ cursor: link && 'pointer' }}>
-            <CardMedia
-              className={classes.media}
-              image={image}
-              title={headline}
-            />
+            <div style={{width: '100%', height: '240px', position: 'relative'}}>
+              <Image
+                src={image}
+                alt={headline}
+                layout='fill'
+                objectFit='contain'
+              />
+            </div>
             <CardContent>
               <Typography
                 gutterBottom
@@ -77,7 +78,14 @@ function MediaCard(props) {
         </a>
       ) : (
         <>
-          <CardMedia className={classes.media} image={image} title={headline} />
+          <div style={{width: '100%', height: '240px', position: 'relative'}}>
+            <Image
+              src={image}
+              alt={headline}
+              layout='fill'
+              objectFit='contain'
+            />
+          </div>
           <CardContent>
             <Typography
               gutterBottom
