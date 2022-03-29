@@ -45,8 +45,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     profileImage: {
-      width: 200,
-      height: 200,
       borderRadius: '50%',
     },
     profileMobile: {

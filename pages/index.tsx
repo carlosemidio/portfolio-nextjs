@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image'
 import Layout from '../components/Layout';
 import Carousel from '../components/Carousel';
 import ContactForm from '../components/ContactForm';
@@ -74,9 +75,11 @@ function Home() {
                 <a href="#whatido">O QUE FAÇO</a>
               </li>
               <li>
-                <img
+                <Image
                   src="/perfil.png"
                   alt="Imagem de perfil"
+                  width={200}
+                  height={200}
                   className={classes.profileImage}
                 />
               </li>
@@ -88,11 +91,12 @@ function Home() {
               </li>
             </ul>
             <div className={classes.profileMobile}>
-              <img
+              <Image
                 src="/perfil.png"
                 alt="Imagem de perfil"
-                className={classes.profileImage}
-              />
+                width={200}
+                height={200}
+                className={classes.profileImage} />
             </div>
             <div className={classes.backgroundBox}>
               <div className={classes.textFromLeft}>
@@ -125,11 +129,11 @@ function Home() {
             <div className={classes.services}>
               <div className={classes.servicesBox}>
                 <div className={classes.serviceCard}>
-                  <img
+                  <Image
                     src="/icon-sistem.png"
                     alt="Imagem web"
-                    width={'100px'}
-                    height={'64px'}
+                    width={100}
+                    height={64}
                   />
                   <h1 className={classes.serviceTitle}>
                     Desenvolvimento de websites e Sistemas web
