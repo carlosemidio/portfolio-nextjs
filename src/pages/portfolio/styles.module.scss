@@ -1,0 +1,96 @@
+@import '../../styles/layout/queries';
+
+.root {
+    width: 100%;
+    padding: 0;
+    background-image: url('/background-min.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+    &:after {
+      content: "''";
+      opacity: .8;
+      z-index: -1;
+      background-color: #000000;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+}
+
+.content {
+  width: 100%;
+
+  .sectionTitle {
+    font-size: 48px;
+  }
+
+  .aboutSection {
+    .aboutBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      .aboutImageBox {
+        position: relative;
+        background-color: #00FFFF;
+        height: 400px;
+        max-width: 100%;
+        width: 30%;
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      .aboutTextBox {
+        padding: 15px;
+        max-width: 100%;
+        width: 67%;
+
+        font-size: 24px;
+        color: #FFFFFF;
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .portfolioSection {
+    width: 100%;
+
+    .portfolioBox {
+      width: 100%;
+      background-color: #FFFFFF;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .portfolioList {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include mobile {
+          padding: 15px;
+        }
+
+        @include tablet {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}

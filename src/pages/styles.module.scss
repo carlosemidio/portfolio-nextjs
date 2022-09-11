@@ -1,0 +1,134 @@
+@import '../styles/layout/queries';
+
+.root {
+    width: 100%;
+    padding: 0;
+    background-image: url('/background-min.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+    &:after {
+      content: "''";
+      opacity: .8;
+      z-index: -1;
+      background-color: #000000;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+}
+
+.content {
+  width: 100%;
+
+  .sectionTitle {
+    font-size: 48px;
+  }
+
+  .aboutSection {
+    .aboutBox {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .aboutImageBox {
+        position: relative;
+        max-width: 100%;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mobile {
+          width: 100%;
+          padding-top: 100px;
+        }
+      }
+
+      .aboutTextBox {
+        max-width: 100%;
+        width: calc(100% - 360px);
+
+        @include mobile {
+          width: 100%;
+        }
+
+        .aboutText {
+          position: relative;
+          padding: 15px;
+          font-size: 32px;
+          color: #FFFFFF;
+
+          .cursor {
+            width: 30px;
+            height: 5px;
+            position: relative;
+            margin-left: 20px;
+
+            &:after {
+              content: '';
+              position: absolute;
+              right: 0;
+              bottom: 5px;
+              width: 16px;
+              height: 5px;
+              background-color: #FFFFFF;
+              z-index: 2;
+
+              animation: cursor-efect 1s infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @mixin animation-mixin($name) {
+    @-webkit-keyframes #{$name} {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes #{$name} {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+  }
+
+  @include animation-mixin(cursor-efect);
+
+  .portfolioSection {
+    width: 100%;
+
+    .portfolioBox {
+      width: 100%;
+      background-color: #FFFFFF;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .portfolioList {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include mobile {
+          padding: 15px;
+        }
+
+        @include tablet {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
