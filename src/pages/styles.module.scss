@@ -2,29 +2,22 @@
 
 .root {
     width: 100%;
+    height: 100%;
     padding: 0;
-    background-image: url('/background-min.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: fixed;
-    position: relative;
-    z-index: 0;
-    &:after {
-      content: "''";
-      opacity: .8;
-      z-index: -1;
-      background-color: #000000;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: scroll;
 }
 
 .content {
   width: 100%;
+  position: relative;
 
   .sectionTitle {
     font-size: 48px;
@@ -52,19 +45,114 @@
         }
       }
 
-      .aboutTextBox {
+      .aboutTeminal {
         max-width: 100%;
         width: calc(100% - 360px);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         @include mobile {
           width: 100%;
         }
 
+        .aboutTeminalHeader {
+          height: 40px;
+          width: 100%;
+          background-color: #474242;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+          .aboutTeminalHeaderTitle {
+            font-weight: 600;
+            margin-left: 15px;
+            color: #e2e2e2;
+          }
+
+          .aboutTeminalHeaderButtonClose {
+            width: 20px;
+            height: 20px;
+            font-size: 16px;
+            border-radius: 50%;
+            color: #000;
+            background-color: #b44e28;
+            margin-left: 15px;
+
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+          }
+
+          .aboutTeminalHeaderButtonMinimize {
+            width: 20px;
+            height: 20px;
+            font-size: 16px;
+            border-radius: 45%;
+            color: #000;
+            background-color: #59514C;
+            margin-left: 5px;
+            position: relative;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 20%;
+              width: 60%;
+              height: 2px;
+              background-color: #000000;
+              opacity: .6;
+              z-index: 2;
+            }
+          }
+
+          .aboutTeminalHeaderButtonMaximize {
+            width: 20px;
+            height: 20px;
+            font-size: 16px;
+            border-radius: 50%;
+            color: #000;
+            background-color: #59514C;
+            margin-left: 5px;
+            position: relative;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 20%;
+              left: 20%;
+              width: 40%;
+              height: 40%;
+              border: #000 solid 2px;
+              opacity: .6;
+              z-index: 2;
+            }
+          }
+        }
+
         .aboutText {
+          width: 100%;
+          height: 200px;
           position: relative;
-          padding: 15px;
           font-size: 32px;
           color: #FFFFFF;
+          text-align: left;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #300B23;
+            opacity: .6;
+            z-index: -1;
+          }
 
           .cursor {
             width: 30px;

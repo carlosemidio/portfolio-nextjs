@@ -66,42 +66,66 @@ const Home: React.FC = () => {
   }, [_text, row, col, invert])
 
   return (
-    <div className={ styles.root }>
-      <Head>
-        <title>Carlos Emídio Dev</title>
-      </Head>
-      <SocialLinks />
-      <Navbar />
-
-      <div className={styles.content}>
-        <section className={ styles.aboutSection }>
-          <Container>
-            <div className={ styles.aboutBox }>
-              <div className={ styles.aboutImageBox }>
-                <Image className={styles.image} alt='perfil' width="300px" height="308px" src="/perfil.png" />
-              </div>
-              <div className={ styles.aboutTextBox }>
-                <p className={ styles.aboutText } id="aboutText">{ _text }<span className={styles.cursor}></span></p>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className={ styles.portfolioSection } id="portfolio">
-          <Container>
-            <div className={ styles.portfolioBox }>
-              <h1 className={ styles.sectionTitle }>
-                Meus projetos
-              </h1>
-
-              <div className={ styles.portfolioList }>
-                { projectsList }
-              </div>
-            </div>
-          </Container>
-        </section>
+    <>
+      <div className="scene">
+        <div className="wrap">
+            <div className="wall wall-right"></div>
+            <div className="wall wall-left"></div>   
+            <div className="wall wall-top"></div>
+            <div className="wall wall-bottom"></div> 
+            <div className="wall wall-back"></div>    
+        </div>
+        <div className="wrap">
+            <div className="wall wall-right"></div>
+            <div className="wall wall-left"></div>   
+            <div className="wall wall-top"></div>
+            <div className="wall wall-bottom"></div>   
+            <div className="wall wall-back"></div>    
+        </div>
       </div>
-    </div>
+      <div className={ styles.root }>
+        <Head>
+          <title>Carlos Emídio Dev</title>
+        </Head>
+        <SocialLinks />
+        <Navbar />
+
+        <div className={styles.content}>
+          <section className={ styles.aboutSection }>
+            <Container>
+              <div className={ styles.aboutBox }>
+                <div className={ styles.aboutImageBox }>
+                  <Image className={styles.image} alt='perfil' width="300px" height="308px" src="/perfil.png" />
+                </div>
+                <div className={ styles.aboutTeminal }>
+                  <div className={ styles.aboutTeminalHeader }>
+                    <span className={ styles.aboutTeminalHeaderButtonClose }>x</span>
+                    <span className={ styles.aboutTeminalHeaderButtonMinimize }></span>
+                    <span className={ styles.aboutTeminalHeaderButtonMaximize }></span>
+                    <span className={ styles.aboutTeminalHeaderTitle }> carlosemídio: ~</span>
+                  </div>
+                  <div className={ styles.aboutText } id="aboutText"><span>carlosemídio:~$ </span>{ _text }<span className={styles.cursor}></span></div>
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          <section className={ styles.portfolioSection } id="portfolio">
+            <Container>
+              <div className={ styles.portfolioBox }>
+                <h1 className={ styles.sectionTitle }>
+                  Meus projetos
+                </h1>
+
+                <div className={ styles.portfolioList }>
+                  { projectsList }
+                </div>
+              </div>
+            </Container>
+          </section>
+        </div>
+      </div>
+    </>
   );
 }
 
