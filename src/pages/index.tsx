@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             }
           }
         }
-      }, 50)
+      }, 100)
 
     return () => clearInterval(interval);
 

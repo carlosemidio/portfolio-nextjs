@@ -17,7 +17,7 @@ const SocialLinks = () => {
         <li>
           <SocialIcon
             fgColor='#ffffff'
-            url="https://www.instagram.com/carlosemidio11/"
+            url="https://www.instagram.com/carlosemidiodev/"
             target="_blank"
             rel="noopener noreferrer"
           />
