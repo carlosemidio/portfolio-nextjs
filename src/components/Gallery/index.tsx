@@ -50,7 +50,7 @@ class Gallery extends Component<Props> {
     const { setIsOpen, isOpen } = this.props;
 
     const images = this.props.images.map((image, index) => {
-      return <img className={styles.image} src={image.src} />;
+      return <img key={image.src} className={styles.image} src={image.src} />;
     });
 
     return (

@@ -54,7 +54,7 @@ interface FormValues {
   message?: string;
 }
 
-const form = (props: FormikProps<FormValues>) => {
+const Form = (props: FormikProps<FormValues>) => {
   const {
     values,
     touched,
@@ -221,6 +221,6 @@ const ContactForm = withFormik<MyFormProps, FormValues>({
       setSubmitting(false);
     });
   },
-})(form);
+})(Form);
 
 export default ContactForm;
