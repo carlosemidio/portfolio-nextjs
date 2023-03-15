@@ -8,6 +8,10 @@ import projects from '../utils/projects';
 import ProjectCard from '../components/ProjectCard';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import ContactForm from '../components/ContactForm';
+import {NotificationContainer} from 'react-notifications';
+import { Box, Modal } from '@mui/material';
+import Project from '../components/Project';
 
 const aboutText = [
   'Olá, Seja muito bem vindo(a)',
@@ -18,19 +22,22 @@ const aboutText = [
 ]
 
 const Home: React.FC = () => {
-  const projectsList = projects.map(project => {
-    return <ProjectCard
-      key={project.headline}
-      image={project.image}
-      link={project.link}
-      headline={project.headline}
-      description={project.description} />
-  })
-
+  const [openModal, setOpenModal] = useState(false)
+  const [project, setProject] = useState(null)
   const [_text, setText] = useState('')
   const [invert, setInvert] = useState(true)
   const [row, setRow] = useState(aboutText.length-1)
   const [col, setCol] = useState(0)
+
+  const projectsList = projects.map(_project => {
+    return <ProjectCard
+      openModal={() => {setOpenModal(true); setProject(_project)}}
+      key={_project.headline}
+      image={_project.image}
+      link={_project.link}
+      headline={_project.headline}
+      description={_project.description} />
+  })
 
   useEffect(() => {
     let interval = null
@@ -90,12 +97,31 @@ const Home: React.FC = () => {
         <SocialLinks />
         <Navbar />
 
+        <Modal
+          open={openModal}
+          onClose={() => setOpenModal(false)}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          style={{ zIndex: 999 }}
+        >
+          <Box className={styles.modal}>
+            <Project
+              project={project}
+              closeModal={() => setOpenModal(false)}
+            />
+          </Box>
+        </Modal>
+
         <div className={styles.content}>
           <section className={ styles.aboutSection }>
             <Container>
               <div className={ styles.aboutBox }>
                 <div className={ styles.aboutImageBox }>
-                  <Image className={styles.image} alt='perfil' width="300px" height="308px" src="/perfil.png" />
+                  <Image className={styles.image}
+                    alt='perfil'
+                    width="300px"
+                    height="308px"
+                    src="/perfil.png" />
                 </div>
                 <div className={ styles.aboutTeminal }>
                   <div className={ styles.aboutTeminalHeader }>
@@ -114,7 +140,7 @@ const Home: React.FC = () => {
             <Container>
               <div className={ styles.portfolioBox }>
                 <h1 className={ styles.sectionTitle }>
-                  Meus projetos
+                  Projetos nos quais trabalhei
                 </h1>
 
                 <div className={ styles.portfolioList }>
@@ -123,8 +149,24 @@ const Home: React.FC = () => {
               </div>
             </Container>
           </section>
+
+          <section className={ styles.portfolioSection } id="contact">
+            <Container>
+              <div className={ styles.portfolioBox }>
+                <h1 className={ styles.sectionTitle }>
+                  Entre em contato comigo
+                </h1>
+
+                <div className={ styles.portfolioList }>
+                  <ContactForm />
+                </div>
+              </div>
+            </Container>
+          </section>
         </div>
       </div>
+
+      <NotificationContainer />
     </>
   );
 }

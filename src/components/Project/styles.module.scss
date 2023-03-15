@@ -1,0 +1,49 @@
+.root {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.image {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    padding: 15px;
+}
+
+.description {
+    text-align: center;
+}
+
+.closeIconBox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.closeIcon {
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+    background-color: rgba(0,0,0,.7);
+    color: #ffffff;
+}
+
+.fullscreenIconBox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.fullscreenIcon {
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+    background-color: rgba(0,0,0,.7);
+    color: #ffffff;
+}

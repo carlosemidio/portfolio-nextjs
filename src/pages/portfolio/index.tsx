@@ -26,7 +26,7 @@ const Portfolio: React.FC = () => {
           <Container>
             <div className={ styles.portfolioBox }>
               <h1 className={ styles.sectionTitle }>
-                Meus projetos
+                Alguns dos projetos nos quais trabalhei
               </h1>
 
               <div className={ styles.portfolioList }>

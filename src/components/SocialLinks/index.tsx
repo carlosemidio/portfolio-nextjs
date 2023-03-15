@@ -33,7 +33,7 @@ const SocialLinks = () => {
         <li>
           <SocialIcon
             fgColor='#ffffff'
-            url="https://web.whatsapp.com/send?phone=5584991911006"
+            url="https://web.whatsapp.com/send?phone=5584994312813"
             target="_blank"
             rel="noopener noreferrer"
           />

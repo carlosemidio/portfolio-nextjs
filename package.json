@@ -9,13 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.13",
     "@sendgrid/mail": "^7.7.0",
+    "formik": "^2.2.9",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-image-lightbox": "^5.1.4",
+    "react-input-mask": "^2.0.4",
+    "react-multi-carousel": "^2.8.2",
+    "react-notifications": "^1.7.4",
     "react-social-icons": "^5.14.0",
     "sass": "^1.54.9",
-    "sharp": "^0.31.0"
+    "sharp": "^0.31.0",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "18.7.16",
