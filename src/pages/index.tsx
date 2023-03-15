@@ -10,8 +10,9 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm';
 import {NotificationContainer} from 'react-notifications';
-import { Box, Modal } from '@mui/material';
+import { Box, Button, Modal } from '@mui/material';
 import Project from '../components/Project';
+import Link from 'next/link';
 
 const aboutText = [
   'Olá, Seja muito bem vindo(a)',
@@ -29,7 +30,7 @@ const Home: React.FC = () => {
   const [row, setRow] = useState(aboutText.length-1)
   const [col, setCol] = useState(0)
 
-  const projectsList = projects.map(_project => {
+  const projectsList = projects.slice(1, 5).map(_project => {
     return <ProjectCard
       openModal={() => {setOpenModal(true); setProject(_project)}}
       key={_project.headline}
@@ -145,6 +146,10 @@ const Home: React.FC = () => {
 
                 <div className={ styles.portfolioList }>
                   { projectsList }
+                </div>
+
+                <div>
+                  <Link href="/portfolio"><Button color='primary' variant='contained'>Ver todos os projetos</Button></Link>  
                 </div>
               </div>
             </Container>
