@@ -14,18 +14,13 @@ import { Box, Button, Modal } from '@mui/material';
 import Project from '../components/Project';
 import Link from 'next/link';
 
-const aboutText = [
-  'Olá, Seja muito bem vindo(a)',
-  'Continue navegando e conheça um pouco do meu trabalho'
-]
+const aboutText = 'Olá, Seja muito bem vindo(a)! Continue navegando e conheça um pouco do meu trabalho.'
 
 const Home: React.FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [project, setProject] = useState(null)
   const [_text, setText] = useState('')
-  const [invert, setInvert] = useState(true)
-  const [row, setRow] = useState(aboutText.length-1)
-  const [col, setCol] = useState(0)
+  const [index, setIndex] = useState(0)
 
   const projectsList = projects.slice(1, 5).map(_project => {
     return <ProjectCard
@@ -39,36 +34,18 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     let interval = null
-      interval = setInterval(() => {
-        if (!invert && (row < aboutText.length)) {
-          let aux = _text+aboutText[row][col]
-          setText(aux)
-          
-          if (col < (aboutText[row].length - 1)) {
-            setCol((col => col + 1))
-          } else {
-            setInvert(true)
-          }
-        } else {
-          if (col > 0) {
-            setText(aboutText[row].substring(0, col))
-            setCol((col => col - 1))
-          } else {
-            setText("")
-            setInvert(false)
-            setCol(0)
-            if (row >= aboutText.length) {
-              setRow(0)
-            } else {
-              setRow(row => row + 1)
-            }
-          }
-        }
-      }, 50)
+
+    interval = setInterval(() => {
+      if (index < aboutText.length) {
+        let aux = _text+aboutText[index]
+        setText(aux)
+        setIndex(index+1)
+      }
+    }, 50)
 
     return () => clearInterval(interval);
 
-  }, [_text, row, col, invert])
+  }, [_text])
 
   return (
     <>
