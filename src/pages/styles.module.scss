@@ -154,11 +154,15 @@
 
         .aboutText {
           width: 100%;
-          height: 200px;
+          height: 250px;
           position: relative;
           font-size: 32px;
           color: #FFFFFF;
           text-align: left;
+          
+          white-space: -moz-pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
 
           &:after {
             content: '';

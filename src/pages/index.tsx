@@ -16,9 +16,6 @@ import Link from 'next/link';
 
 const aboutText = [
   'Olá, Seja muito bem vindo(a)',
-  'Sou dev web a mais de 5 anos',
-  'Trabalho com algumas das linguagens e frameworks web mais utilizados na atualidade',
-  'Já desenvolvi várias aplicações em diversos seguimentos ao longo desses anos',
   'Continue navegando e conheça um pouco do meu trabalho'
 ]
 
@@ -67,7 +64,7 @@ const Home: React.FC = () => {
             }
           }
         }
-      }, 100)
+      }, 50)
 
     return () => clearInterval(interval);
 
