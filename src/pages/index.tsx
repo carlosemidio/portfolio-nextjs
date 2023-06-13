@@ -129,7 +129,7 @@ const Home: React.FC = () => {
             </Container>
           </section>
 
-          <section className={ styles.portfolioSection } id="contact">
+          {/* <section className={ styles.portfolioSection } id="contact">
             <Container>
               <div className={ styles.portfolioBox }>
                 <h1 className={ styles.sectionTitle }>
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </Container>
-          </section>
+          </section> */}
         </div>
       </div>
 

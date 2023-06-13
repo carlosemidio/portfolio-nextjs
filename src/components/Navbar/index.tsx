@@ -14,9 +14,9 @@ const Navbar: React.FC = () => {
   <li>
     <Link href="/#portfolio">PORTFÓLIO</Link>
   </li>
-  <li>
+  {/* <li>
     <Link href="/#contact">FALE COMIGO</Link>
-  </li>
+  </li> */}
 </ul>;
 }
 
